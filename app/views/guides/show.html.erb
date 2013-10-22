@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h2><%= @guide.title %>
+</h2>
+
+<h3>Instructions:</h3>
+<table>
+<% instrs = @guide.instructions.all %>
+<% instrs.sort_by! {|inst| inst.step} %>
+<% instrs.each do |i| %>
+  <tr>
+    <td>
+      <%= i.step %>
+    </td>
+    <td>
+      <%= i.item %>
+    </td>
+    <td><%= button_to 'X', guide_instruction_path(@guide, i), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+<table>
+  <tr>
+    <th>
+      New Step:
+    </th>
+    <th>
+      Instruction:
+    </th>
+  </tr>
+<%= form_for([@guide, @guide.instructions.build]) do |f| %>
+  <tr>
+<td>
+    <%= f.number_field :step %>
+</td><td> <%= f.text_field :item %>
+  </td>
+  </tr>
+    <tr>
+      <td></td>
+      <td><%= f.submit %></td>
+    </tr>
+  </table>
+<% end %>
+
+<%= link_to 'Edit', edit_guide_path(@guide) %> |
+<%= link_to 'Back', guides_path %>
