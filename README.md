@@ -15,7 +15,7 @@ This is a simple application demonstrating nested resources.
 
 This application allows you to create/post a how-to guide.  Once created, you can view the how-to to see the associated steps.  You may also create steps and delete steps.
 
-![Screenshot 1](https://raw.github.com/MBSchneider/QandA/master/app/assets/images/Screen%20Shot$202013-10-22%20at%2012.35.36%20AM.png)
+![Screenshot 1](https://raw.github.com/MBSchneider/How-To-App/master/app/assets/images/Screen%20Shot%202013-10-22%20at%2012.35.36%20AM.png)
 
 ## Authors
 
